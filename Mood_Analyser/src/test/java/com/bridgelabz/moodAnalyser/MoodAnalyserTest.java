@@ -8,21 +8,21 @@ import org.junit.jupiter.api.Test;
 public class MoodAnalyserTest {
     /*
      *  created moodAnalyzer object of class MoodAnalyser and
-     *  initialise it by passing String "I am in Sad mood" as parameter
+     *  initialise it by passing String "I am in Happy mood" as parameter
      */
-    MoodAnalyser moodAnalyzer = new MoodAnalyser("I am in Sad mood");
+    MoodAnalyser moodAnalyzer = new MoodAnalyser("I am in Happy mood");
     /**
-     *  created analyseMoodTest method to test analyseMood method for Sad mood
+     *  created analyseMoodTest method to test analyseMood method for Happy mood
      */
     @Test
     public void analyseMoodTest() {
         /*
          *  calling analyseMood method and
-         *  checking expected (SAD) and actual output are equal or not
+         *  checking expected (HAPPY) and actual output are equal or not
          *  using assertEquals method of class Assertions
          *  if equal then Test passed otherwise failed
          */
         String mood = moodAnalyzer.analyseMood();
-        Assertions.assertEquals("SAD", mood);
+        Assertions.assertEquals("HAPPY", mood);
     }
 }
