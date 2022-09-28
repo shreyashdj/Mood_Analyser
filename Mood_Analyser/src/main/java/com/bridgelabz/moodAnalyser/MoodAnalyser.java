@@ -13,7 +13,7 @@ public class MoodAnalyser {
     /**
      *  creating method analyseMood having string return type and  parameter of string type
      */
-    public String analyseMood(String message){
+    public String analyseMood(){
         /*
          *  if message contains SAD it will return SAD and
          *  if message contains HAPPY it will return HAPPY
