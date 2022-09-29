@@ -17,11 +17,17 @@ public class MoodAnalyser {
         /*
          *  if message contains SAD it will return SAD and
          *  if message contains HAPPY it will return HAPPY
+         *  if message is null it will throw NullPointerException
+         *  we used try and catch to Handle Exception
+         *  then we will return "HAPPY"
          */
-        if(message.contains("Sad")){
-            return "SAD";
-        }
-        else {
+        try {
+            if (message.contains("Sad")) {
+                return "SAD";
+            } else {
+                return "HAPPY";
+            }
+        } catch (NullPointerException nullPointerException){
             return "HAPPY";
         }
     }
