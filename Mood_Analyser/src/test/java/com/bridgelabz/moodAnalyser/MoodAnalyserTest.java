@@ -8,11 +8,11 @@ import org.junit.jupiter.api.Test;
 public class MoodAnalyserTest {
     /*
      *  created moodAnalyzer object of class MoodAnalyser and
-     *  initialise it by passing String "I am in Happy mood" as parameter
+     *  initialise it by passing null as parameter
      */
-    MoodAnalyser moodAnalyzer = new MoodAnalyser("I am in Happy mood");
+    MoodAnalyser moodAnalyzer = new MoodAnalyser(null);
     /**
-     *  created analyseMoodTest method to test analyseMood method for Happy mood
+     *  created analyseMoodTest method to test analyseMood method for null mood
      */
     @Test
     public void analyseMoodTest() {
