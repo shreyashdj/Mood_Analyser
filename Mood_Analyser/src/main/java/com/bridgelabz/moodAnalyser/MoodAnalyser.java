@@ -1,4 +1,5 @@
 package com.bridgelabz.moodAnalyser;
+
 /**
  *  @author - Shreyash Jadhav
  */
@@ -11,24 +12,28 @@ public class MoodAnalyser {
         this.message = message;
     }
     /**
-     *  creating method analyseMood having string return type and  parameter of string type
+     *  creating method analyseMood having string return type to Analyse Mood from message
+     *  it throws MoodAnalysisException
      */
-    public String analyseMood(){
+    public String analyseMood() throws MoodAnalysisException {
         /*
-         *  if message contains SAD it will return SAD and
-         *  if message contains HAPPY it will return HAPPY
+         *  if message is empty throw MoodAnalysisException and print message to inform empty mood entered
+         *  if message contains SAD it will return SAD
          *  if message is null it will throw NullPointerException
-         *  we used try and catch to Handle Exception
-         *  then we will return "HAPPY"
+         *  we used try and catch to Handle NullPointerException and in catch
+         *  throw MoodAnalysisException and print message to inform null mood entered
+         *  else return HAPPY
          */
         try {
-            if (message.contains("Sad")) {
+            if (message.isBlank()) {
+                throw new MoodAnalysisException(MoodAnalysisErrors.EMPTY, "\n Entered empty mood \n Please Enter valid Mood");
+            } else if (message.contains("Sad")) {
                 return "SAD";
             } else {
                 return "HAPPY";
             }
-        } catch (NullPointerException nullPointerException){
-            return "HAPPY";
+        } catch (NullPointerException | MoodAnalysisException nullPointerException){
+            throw new MoodAnalysisException(MoodAnalysisErrors.NULL, "\n Entered null mood \n Please Enter valid Mood");
         }
     }
 }
