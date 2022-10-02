@@ -40,25 +40,37 @@ public class MoodAnalyserTest {
         String mood = moodAnalyzer.analyseMood();
         Assertions.assertEquals("HAPPY", mood);
     }
-    /*
-     *  created moodAnalyzer object of class MoodAnalyser and
-     *  initialise it by passing message "I am in Any mood"
-     *  calling analyseMood method and
-     *  checking expected (HAPPY) and actual output are equal or not
-     *  using assertEquals method of class Assertions
-     *  if equal then Test passed otherwise failed
+    /**
+     *  created analyseMoodTestForNullMood method to test analyseMood method for null mood
      */
     @Test
     public void analyseMoodTestForNullMood() throws MoodAnalysisException {
         /*
          *  created moodAnalyzer object of class MoodAnalyser and
-         *  initialise it by passing message null
+         *  initialise it by passing null message
          *  calling analyseMood method and
          *  checking expected (HAPPY) and actual output are equal or not
          *  using assertEquals method of class Assertions
          *  if equal then Test passed otherwise failed
          */
         MoodAnalyser moodAnalyzer = new MoodAnalyser(null);
+        String mood = moodAnalyzer.analyseMood();
+        Assertions.assertEquals("HAPPY", mood);
+    }
+    /**
+     *  created analyseMoodTestForEmptyMood method to test analyseMood method for empty mood
+     */
+    @Test
+    public void analyseMoodTestForEmptyMood() throws MoodAnalysisException {
+        /*
+         *  created moodAnalyzer object of class MoodAnalyser and
+         *  initialise it by passing empty message
+         *  calling analyseMood method and
+         *  checking expected (HAPPY) and actual output are equal or not
+         *  using assertEquals method of class Assertions
+         *  if equal then Test passed otherwise failed
+         */
+        MoodAnalyser moodAnalyzer = new MoodAnalyser("");
         String mood = moodAnalyzer.analyseMood();
         Assertions.assertEquals("HAPPY", mood);
     }
