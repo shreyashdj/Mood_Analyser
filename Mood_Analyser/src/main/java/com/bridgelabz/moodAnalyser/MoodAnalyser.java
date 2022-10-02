@@ -32,7 +32,7 @@ public class MoodAnalyser {
             } else {
                 return "HAPPY";
             }
-        } catch (NullPointerException | MoodAnalysisException nullPointerException){
+        } catch (NullPointerException nullPointerException){
             throw new MoodAnalysisException(MoodAnalysisErrors.NULL, "\n Entered null mood \n Please Enter valid Mood");
         }
     }
